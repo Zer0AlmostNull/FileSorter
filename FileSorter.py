@@ -4,11 +4,11 @@
 #
 
 import os.path, time, os, datetime, shutil 
+
 WorkerFolderPath='./Worker'
 ProgramName=os.path.basename(__file__)
 
 print('\n',end='')
-
 try:
     os.mkdir(WorkerFolderPath)
     print('Created worker folder', end='\n') 
@@ -55,9 +55,10 @@ def SortFile(f: str,moveto: str):
 
 print('Write your input path: ',end='')
 getpath=input()
-
 MoveFiles(getpath,WorkerFolderPath)
+
 DelUnnessaryFolder(getpath)
+
 print('Write your destination path: ',end='')
 SortFile(WorkerFolderPath,input())
 
@@ -65,6 +66,6 @@ print('Removed worker')
 os.rmdir(WorkerFolderPath)
 
 print('\n***Finished*** - Press Enter to exit')
-
 input()
+
 print('\n',end='')
